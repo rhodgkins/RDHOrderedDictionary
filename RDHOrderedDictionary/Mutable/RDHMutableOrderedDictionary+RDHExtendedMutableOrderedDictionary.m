@@ -35,7 +35,7 @@
     [self addEntriesFromDictionary:otherDictionary];
 }
 
--(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key NS_AVAILABLE(10_8, 6_0)
+-(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
     [self setObject:obj forKey:key];
 }

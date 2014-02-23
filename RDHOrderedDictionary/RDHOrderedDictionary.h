@@ -82,6 +82,10 @@
 -(void)removeAllObjects;
 -(void)removeObjectsForKeys:(NSArray *)keyArray;
 -(void)setDictionary:(NSDictionary *)otherDictionary;
--(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key NS_AVAILABLE(10_8, 6_0);
+-(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key;
+
+@end
+
+@interface RDHMutableOrderedDictionary (RDHOrderedExtensions)
 
 @end
