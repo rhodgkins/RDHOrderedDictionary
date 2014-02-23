@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: TestProject/RDHOrderedDictionary.xcodeproj
 xcode_scheme: RDHOrderedDictionary
+xcode_sdk: macosx
