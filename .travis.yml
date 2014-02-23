@@ -3,8 +3,8 @@ xcode_project: TestProject/RDHOrderedDictionary.xcodeproj
 xcode_scheme: RDHOrderedDictionary
 xcode_sdk: macosx
 
-after_success:
-  - gem install cocoapods -q
-  - pod --version
-  - pod spec lint RDHOrderedDictionary.podspec
+#after_success:
+#  - gem install cocoapods -q
+#  - pod --version
+#  - pod spec lint RDHOrderedDictionary.podspec
 
