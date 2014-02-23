@@ -10,22 +10,20 @@
 
 @interface RDHOrderedDictionary : NSDictionary
 
+/// @name Creating and Initializing a Dictionary
+
 +(instancetype)dictionaryWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
 
 -(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
 
-#pragma mark - Comparison methods
+#pragma mark - Comparing Dictionaries
+/// @name Comparing Dictionaries
 
 -(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary;
 
 @end
 
 @interface RDHMutableOrderedDictionary : RDHOrderedDictionary
-
-+(instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
-
--(instancetype)init;	/* designated initializer */
--(instancetype)initWithCapacity:(NSUInteger)numItems;	/* designated initializer */
 
 /**
  * This specifies that the order of the keys (and therefore their values) are kept as they are added. That is adding the keys [0, 1, 2] and adding 0 will mean the order of the keys is now [1, 2, 0].
@@ -35,12 +33,23 @@
  */
 @property (nonatomic) BOOL reordersWhenInsertingAlreadyPresentKeys;
 
+/// @name Creating and Initializing a Mutable Dictionary
+
++(instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
+
+-(instancetype)init;
+-(instancetype)initWithCapacity:(NSUInteger)numItems;
+
+/// @name Adding and removing objects
+
 -(void)removeObjectForKey:(id)aKey;
 -(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
 
 @end
 
 @interface RDHMutableOrderedDictionary (RDHExtendedMutableOrderedDictionary)
+
+/// @name Adding and removing objects
 
 -(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
 -(void)removeAllObjects;
