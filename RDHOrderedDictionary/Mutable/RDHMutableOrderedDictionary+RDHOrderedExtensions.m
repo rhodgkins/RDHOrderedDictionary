@@ -27,6 +27,8 @@
     [orderedKeySet sortUsingDescriptors:sortDescriptors];
 }
 
+#if NS_BLOCKS_AVAILABLE
+
 -(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr
 {
     [self sortEntriesByKeysWithOptions:NSSortStable usingComparator:cmptr];
@@ -36,5 +38,7 @@
 {
     [orderedKeySet sortWithOptions:opts usingComparator:cmptr];
 }
+
+#endif
 
 @end

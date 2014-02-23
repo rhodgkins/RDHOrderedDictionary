@@ -146,6 +146,8 @@
     [self checkDictionaryWithNumberKeys:numberKeysMutableDict];
 }
 
+#if NS_BLOCKS_AVAILABLE
+
 -(void)testSortUsingComparator
 {
     RDHOrderedDictionary *numberKeysDict = [self filledNumberKeyDictionary];
@@ -163,6 +165,8 @@
     
     [self checkDictionaryWithNumberKeys:numberKeysMutableDict];
 }
+
+#endif
 
 #pragma mark - Dictionary creation
 

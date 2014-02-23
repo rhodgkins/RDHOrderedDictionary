@@ -96,7 +96,12 @@
 /// @name Sorting Entries
 
 -(void)sortEntriesByKeysUsingDescriptors:(NSArray *)sortDescriptors;
+
+#if NS_BLOCKS_AVAILABLE
+
 -(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr;
 -(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+
+#endif
 
 @end
