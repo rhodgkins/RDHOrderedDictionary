@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A9465A18BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9465918BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m */; };
+		44A9465C18BA777500CB9C32 /* RDHOrderedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9465B18BA777500CB9C32 /* RDHOrderedTests.m */; };
+		44A9465D18BA777800CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9465918BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m */; };
+		44A9465F18BA7D0300CB9C32 /* RDHBasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9465E18BA7D0300CB9C32 /* RDHBasicTests.m */; };
 		44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */; };
 		44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */; };
 		44CF0E5C18BA4CA00029EFC2 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF0E5B18BA4CA00029EFC2 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m */; };
@@ -44,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44A9465918BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RDHOrderedDictionary+RDHOrderedExtensions.m"; sourceTree = "<group>"; };
+		44A9465B18BA777500CB9C32 /* RDHOrderedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHOrderedTests.m; sourceTree = "<group>"; };
+		44A9465E18BA7D0300CB9C32 /* RDHBasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHBasicTests.m; sourceTree = "<group>"; };
 		44B31BA018BA16D300A99AFE /* RDHOrderedDictionary_RDHInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary_RDHInternal.h; sourceTree = "<group>"; };
 		44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHReorderingTests.m; sourceTree = "<group>"; };
 		44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionaryTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -127,6 +134,7 @@
 				44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */,
 				44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */,
 				44CF0E5B18BA4CA00029EFC2 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m */,
+				44A9465918BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m */,
 			);
 			name = Classes;
 			path = ../RDHOrderedDictionary;
@@ -136,9 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */,
+				44A9465E18BA7D0300CB9C32 /* RDHBasicTests.m */,
 				44E7142018BA040900A99FDF /* RDHInitalizerTests.m */,
 				44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */,
 				44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */,
+				44A9465B18BA777500CB9C32 /* RDHOrderedTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -230,6 +240,7 @@
 			files = (
 				44E7142218BA052000A99FDF /* RDHOrderedDictionary.m in Sources */,
 				44E7142318BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */,
+				44A9465A18BA760300CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */,
 				44CF0E5C18BA4CA00029EFC2 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44E7141918B9FF8900A99FDF /* main.m in Sources */,
 			);
@@ -241,10 +252,13 @@
 			files = (
 				44CF0E6018BA4EE10029EFC2 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44E7142418BA052000A99FDF /* RDHOrderedDictionary.m in Sources */,
+				44A9465C18BA777500CB9C32 /* RDHOrderedTests.m in Sources */,
 				44E7142518BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */,
 				44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */,
+				44A9465D18BA777800CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */,
 				44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */,
 				44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */,
+				44A9465F18BA7D0300CB9C32 /* RDHBasicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

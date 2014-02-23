@@ -23,6 +23,33 @@
 
 @end
 
+@interface RDHOrderedDictionary (RDHOrderedExtensions)
+
+#pragma mark - Accessing Dictionary Members
+/// @name Accessing Dictionary Members
+
+/// @returns the first key in the ordered dictionary.
+-(id)firstKey;
+
+/// @returns the value for the first key in the ordered dictionary.
+-(id)firstValue;
+
+/// @returns the last key in the ordered dictionary.
+-(id)lastKey;
+
+/// @returns the last for the first key in the ordered dictionary.
+-(id)lastValue;
+
+/// @returns the reverse of `-keyEnumerator`.
+-(NSEnumerator *)reverseKeyEnumerator;
+
+@end
+
+/*******************************************************/
+/************	Mutable Ordered Dictionary	************/
+/*******************************************************/
+#pragma mark - Mutable Ordered Dictionary
+
 @interface RDHMutableOrderedDictionary : RDHOrderedDictionary
 
 /**

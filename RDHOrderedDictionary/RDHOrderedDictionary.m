@@ -108,4 +108,29 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
     return [[RDHMutableOrderedDictionary allocWithZone:zone] initWithOrderedDictionary:self];
 }
 
+#pragma mark - Methods that can use reverse enumeration
+
+#if NS_BLOCKS_AVAILABLE
+
+-(void)enumerateKeysAndObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id key, id obj, BOOL *stop))block
+{
+    NSAssert(block, @"block cannot be nil");
+    
+    [orderedKeySet enumerateObjectsWithOptions:opts usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        return block(obj, [backingDictionary objectForKey:obj], stop);
+    }];
+}
+
+-(NSSet *)keysOfEntriesWithOptions:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id key, id obj, BOOL *stop))predicate
+{
+    NSAssert(predicate, @"predicate cannot be nil");
+    
+    NSIndexSet *entryIndexes = [orderedKeySet indexesOfObjectsWithOptions:opts passingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return predicate(obj, [backingDictionary objectForKey:obj], stop);
+    }];
+    return [NSSet setWithArray:[orderedKeySet objectsAtIndexes:entryIndexes]];
+}
+
+#endif
+
 @end
