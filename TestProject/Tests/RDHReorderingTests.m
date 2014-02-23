@@ -16,7 +16,7 @@
 
 #import "RDHOrderedDictionary.h"
 
-static NSUInteger const RDHObjectCount = 10000;
+static NSUInteger const RDHObjectCount = 100;
 
 @implementation RDHReorderingTests
 
@@ -35,6 +35,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [super tearDown];
 }
 
+/// Tests to see that the correct values are overwritten when initalizing a immutable dictionary
 -(void)testImmutableReorderingFromInitializers
 {
     NSDictionary *numberKeysDict = [RDHOrderedDictionary dictionaryWithObjectsAndKeys:
@@ -66,6 +67,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [self checkDictionaryWithStringKeys:stringKeysDict order:ordering];
 }
 
+/// Tests to see that the correct values are overwritten when initalizing a mutable dictionary
 -(void)testMutableReorderingFromInitializers
 {
     NSDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionaryWithObjectsAndKeys:
@@ -91,6 +93,80 @@ static NSUInteger const RDHObjectCount = 10000;
                                                    @(5), [self.spellOutFormatter stringFromNumber:@(5)],
                                                    @(6), [self.spellOutFormatter stringFromNumber:@(6)],
                                                    @(0), [self.spellOutFormatter stringFromNumber:@(0)], nil];
+    
+    [self checkDictionaryWithNumberKeys:numberKeysDict order:ordering];
+    
+    [self checkDictionaryWithStringKeys:stringKeysDict order:ordering];
+}
+
+/// Tests to see that the correct values are overwritten when initalizing a immutable dictionary and then adding new values
+-(void)testMutableReorderingFromAddingWithOverwriting
+{
+    RDHMutableOrderedDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionaryWithCapacity:RDHObjectCount];
+    RDHMutableOrderedDictionary *stringKeysDict = [RDHMutableOrderedDictionary dictionaryWithCapacity:RDHObjectCount];
+    
+    NSMutableArray *ordering = [NSMutableArray arrayWithCapacity:RDHObjectCount];
+    NSUInteger orderingIndex = 0;
+    
+    // First create the standard dictionary
+    for (NSUInteger i=0; i<RDHObjectCount; i++) {
+        NSNumber *iNumber = @(i);
+        NSString *iString = [self.spellOutFormatter stringFromNumber:iNumber];
+        
+        numberKeysDict[iNumber] = iString;
+        stringKeysDict[iString] = iNumber;
+        
+        ordering[orderingIndex++] = iNumber;
+    }
+    
+    orderingIndex = RDHObjectCount / 2;
+    // Now add vales from half way backwards
+    for (NSUInteger i=RDHObjectCount-1; i>=(RDHObjectCount / 2); i--) {
+        NSNumber *iNumber = @(i);
+        NSString *iString = [self.spellOutFormatter stringFromNumber:iNumber];
+        
+        numberKeysDict[iNumber] = iString;
+        stringKeysDict[iString] = iNumber;
+        
+        ordering[orderingIndex++] = iNumber;
+    }
+    
+    [self checkDictionaryWithNumberKeys:numberKeysDict order:ordering];
+    
+    [self checkDictionaryWithStringKeys:stringKeysDict order:ordering];
+}
+
+/// Tests to see that the correct values are ignored when initalizing a immutable dictionary and then adding new values
+-(void)testMutableReorderingFromAddingWithIgnoring
+{
+    RDHMutableOrderedDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionaryWithCapacity:RDHObjectCount];
+    RDHMutableOrderedDictionary *stringKeysDict = [RDHMutableOrderedDictionary dictionaryWithCapacity:RDHObjectCount];
+    
+    numberKeysDict.reordersWhenInsertingAlreadyPresentKeys = NO;
+    stringKeysDict.reordersWhenInsertingAlreadyPresentKeys = NO;
+    
+    NSMutableArray *ordering = [NSMutableArray arrayWithCapacity:RDHObjectCount];
+    NSUInteger orderingIndex = 0;
+    
+    // First create the standard dictionary
+    for (NSUInteger i=0; i<RDHObjectCount; i++) {
+        NSNumber *iNumber = @(i);
+        NSString *iString = [self.spellOutFormatter stringFromNumber:iNumber];
+        
+        numberKeysDict[iNumber] = iString;
+        stringKeysDict[iString] = iNumber;
+        
+        ordering[orderingIndex++] = iNumber;
+    }
+    
+    // Now add vales from half way backwards
+    for (NSUInteger i=RDHObjectCount-1; i>=(RDHObjectCount / 2); i--) {
+        NSNumber *iNumber = @(i);
+        NSString *iString = [self.spellOutFormatter stringFromNumber:iNumber];
+        
+        numberKeysDict[iNumber] = iString;
+        stringKeysDict[iString] = iNumber;
+    }
     
     [self checkDictionaryWithNumberKeys:numberKeysDict order:ordering];
     
