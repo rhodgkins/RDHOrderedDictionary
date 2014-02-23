@@ -17,6 +17,8 @@
 		44A9466D18BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9466418BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m */; };
 		44A9466E18BA815700CB9C32 /* RDHMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9466518BA815700CB9C32 /* RDHMutableOrderedDictionary.m */; };
 		44A9466F18BA815700CB9C32 /* RDHMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9466518BA815700CB9C32 /* RDHMutableOrderedDictionary.m */; };
+		44A9467218BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9467118BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m */; };
+		44A9467318BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9467118BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m */; };
 		44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */; };
 		44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */; };
 		44E713F218B9FAD500A99FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E713F118B9FAD500A99FDF /* Foundation.framework */; };
@@ -56,6 +58,7 @@
 		44A9466518BA815700CB9C32 /* RDHMutableOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHMutableOrderedDictionary.m; sourceTree = "<group>"; };
 		44A9466618BA815700CB9C32 /* RDHOrderedDictionary_RDHInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary_RDHInternal.h; sourceTree = "<group>"; };
 		44A9466718BA815700CB9C32 /* RDHOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary.h; sourceTree = "<group>"; };
+		44A9467118BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RDHMutableOrderedDictionary+RDHOrderedExtensions.m"; sourceTree = "<group>"; };
 		44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHReorderingTests.m; sourceTree = "<group>"; };
 		44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionaryTests-Prefix.pch"; sourceTree = "<group>"; };
 		44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHMutableTests.m; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 			children = (
 				44A9466518BA815700CB9C32 /* RDHMutableOrderedDictionary.m */,
 				44A9466418BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m */,
+				44A9467118BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m */,
 			);
 			path = Mutable;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			files = (
 				44A9466E18BA815700CB9C32 /* RDHMutableOrderedDictionary.m in Sources */,
 				44E7141918B9FF8900A99FDF /* main.m in Sources */,
+				44A9467218BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m in Sources */,
 				44A9466A18BA815700CB9C32 /* RDHOrderedDictionary.m in Sources */,
 				44A9466C18BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44A9466818BA815700CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */,
@@ -270,6 +275,7 @@
 				44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */,
 				44A9466D18BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */,
+				44A9467318BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHOrderedExtensions.m in Sources */,
 				44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */,
 				44A9466B18BA815700CB9C32 /* RDHOrderedDictionary.m in Sources */,
 				44A9465F18BA7D0300CB9C32 /* RDHBasicTests.m in Sources */,

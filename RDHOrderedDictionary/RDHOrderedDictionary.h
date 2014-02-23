@@ -88,4 +88,9 @@
 
 @interface RDHMutableOrderedDictionary (RDHOrderedExtensions)
 
+/// @name Adding and removing objects
+
+-(void)removeFirstEntry;
+-(void)removeLastEntry;
+
 @end
