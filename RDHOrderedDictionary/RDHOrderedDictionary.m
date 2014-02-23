@@ -6,13 +6,9 @@
 //  Copyright (c) 2014 Rich H. All rights reserved.
 //
 
-#import "RDHOrderedDictionary.h"
+#import "RDHOrderedDictionary_RDHInternal.h"
 
 @implementation RDHOrderedDictionary
-{
-    NSOrderedSet *orderedKeySet;
-    NSDictionary *backingDictionary;
-}
 
 #pragma mark - Immutable Methods
 
@@ -30,7 +26,7 @@
 {
     self = [super init];
     if (self) {
-        orderedKeySet = [NSOrderedSet orderedSetWithObjects:keys count:cnt];
+        orderedKeySet = [NSMutableOrderedSetFromObjectsPreservingOrder(keys, cnt) copy];
         backingDictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     return self;

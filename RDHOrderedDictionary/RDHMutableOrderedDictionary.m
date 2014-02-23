@@ -6,13 +6,27 @@
 //  Copyright (c) 2014 Rich H. All rights reserved.
 //
 
-#import "RDHOrderedDictionary.h"
+#import "RDHOrderedDictionary_RDHInternal.h"
+
+NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> objects[], NSUInteger cnt)
+{
+    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithCapacity:cnt];
+    
+    for (NSUInteger i=0; i<cnt; i++) {
+        id<NSCopying> object = objects[i];
+        NSUInteger currentIndex = [set indexOfObject:object];
+        
+        if (currentIndex != NSNotFound) {
+            // Remove old object
+            [set removeObjectAtIndex:currentIndex];
+        }
+        [set addObject:object];
+    }
+    
+    return set;
+}
 
 @implementation RDHMutableOrderedDictionary
-{
-    NSMutableOrderedSet *orderedKeySet;
-    NSMutableDictionary *backingDictionary;
-}
 
 #pragma mark - Immutable Methods
 
@@ -25,6 +39,7 @@
 {
     self = [super init];
     if (self) {
+        _reordersWhenInsertingAlreadyPresentKeys = YES;
         orderedKeySet = [NSMutableOrderedSet orderedSetWithCapacity:numItems];
         backingDictionary = [NSMutableDictionary dictionaryWithCapacity:numItems];
     }
@@ -35,7 +50,8 @@
 {
     self = [super init];
     if (self) {
-        orderedKeySet = [NSMutableOrderedSet orderedSetWithObjects:keys count:cnt];
+        _reordersWhenInsertingAlreadyPresentKeys = YES;
+        orderedKeySet = NSMutableOrderedSetFromObjectsPreservingOrder(keys, cnt);
         backingDictionary = [NSMutableDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     return self;
@@ -60,8 +76,25 @@
 
 -(void)setObject:(id)anObject forKey:(id<NSCopying>)aKey
 {
-    [orderedKeySet removeObject:aKey];
-    [orderedKeySet addObject:aKey];
+    NSUInteger currentIndex = [orderedKeySet indexOfObject:aKey];
+    
+    if (self.reordersWhenInsertingAlreadyPresentKeys) {
+        // Remove the current object if needed
+        if (currentIndex != NSNotFound) {
+            [orderedKeySet removeObject:aKey];
+        }
+        // Add it to the end
+        [orderedKeySet addObject:aKey];
+    } else {
+        
+        if (currentIndex == NSNotFound) {
+            // Object was never present so just add it at the end
+            [orderedKeySet addObject:aKey];
+        } else {
+            // Replace the object
+            [orderedKeySet replaceObjectAtIndex:currentIndex withObject:aKey];
+        }
+    }
     
     [backingDictionary setObject:anObject forKey:aKey];
 }

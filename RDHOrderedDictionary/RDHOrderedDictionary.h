@@ -14,4 +14,10 @@
 
 @interface RDHMutableOrderedDictionary : NSMutableDictionary
 
+/**
+ *
+ * Defaults to `YES`.
+ */
+@property (nonatomic) BOOL reordersWhenInsertingAlreadyPresentKeys;
+
 @end

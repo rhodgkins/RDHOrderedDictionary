@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */; };
 		44E713F218B9FAD500A99FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E713F118B9FAD500A99FDF /* Foundation.framework */; };
 		44E7140918B9FDAF00A99FDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E7140818B9FDAF00A99FDF /* XCTest.framework */; };
 		44E7141918B9FF8900A99FDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7141818B9FF8900A99FDF /* main.m */; };
@@ -40,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44B31BA018BA16D300A99AFE /* RDHOrderedDictionary_RDHInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary_RDHInternal.h; sourceTree = "<group>"; };
+		44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHReorderingTests.m; sourceTree = "<group>"; };
 		44E713EE18B9FAD500A99FDF /* RDHOrderedDictionary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RDHOrderedDictionary; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E713F118B9FAD500A99FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44E713F718B9FAD500A99FDF /* RDHOrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				44E7140018B9FD2900A99FDF /* RDHOrderedDictionary.h */,
+				44B31BA018BA16D300A99AFE /* RDHOrderedDictionary_RDHInternal.h */,
 				44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */,
 				44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */,
 			);
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				44E7142018BA040900A99FDF /* RDHInitalizerTests.m */,
+				44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			files = (
 				44E7142418BA052000A99FDF /* RDHOrderedDictionary.m in Sources */,
 				44E7142518BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */,
+				44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */,
 				44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
