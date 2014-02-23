@@ -4,5 +4,6 @@ xcode_scheme: RDHOrderedDictionary
 xcode_sdk: macosx
 
 after_success:
+  - pod --version
   - pod spec lint RDHOrderedDictionary.podspec --verbose
 
