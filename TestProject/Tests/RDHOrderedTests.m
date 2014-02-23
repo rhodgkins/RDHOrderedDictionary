@@ -132,6 +132,38 @@
     XCTAssertEqualObjects([stringKeysDict lastValue], secondToLastKey, @"Last value does not match after removing the previous last entry");
 }
 
+-(void)testSortUsingDescriptors
+{
+    RDHOrderedDictionary *numberKeysDict = [self filledNumberKeyDictionary];
+    RDHMutableOrderedDictionary *numberKeysMutableDict = [self filledNumberKeyMutableDictionary];
+    
+    [numberKeysMutableDict sortEntriesByKeysUsingDescriptors:@[]];
+    
+    XCTAssertEqualObjects(numberKeysDict, numberKeysMutableDict, @"No sorting produces different arrays");
+    
+    [numberKeysMutableDict sortEntriesByKeysUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
+    
+    [self checkDictionaryWithNumberKeys:numberKeysMutableDict];
+}
+
+-(void)testSortUsingComparator
+{
+    RDHOrderedDictionary *numberKeysDict = [self filledNumberKeyDictionary];
+    RDHMutableOrderedDictionary *numberKeysMutableDict = [self filledNumberKeyMutableDictionary];
+    
+    [numberKeysMutableDict sortEntriesByKeysUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return NSOrderedSame;
+    }];
+    
+    XCTAssertEqualObjects(numberKeysDict, numberKeysMutableDict, @"No sorting produces different arrays");
+    
+    [numberKeysMutableDict sortEntriesByKeysUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    [self checkDictionaryWithNumberKeys:numberKeysMutableDict];
+}
+
 #pragma mark - Dictionary creation
 
 -(RDHOrderedDictionary *)filledNumberKeyDictionary
@@ -180,6 +212,20 @@
             @(0), [self.spellOutFormatter stringFromNumber:@(0)],
             SECOND_TO_LAST, [self.spellOutFormatter stringFromNumber:SECOND_TO_LAST],
             LAST, [self.spellOutFormatter stringFromNumber:LAST], nil];
+}
+
+#pragma mark - Checking methods
+
+-(void)checkDictionaryWithNumberKeys:(NSDictionary *)dictionary
+{
+    __block NSUInteger i = 0;
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSString *obj, BOOL *stop) {
+        NSNumber *iNumber = @(i++);
+        NSString *iString = [self.spellOutFormatter stringFromNumber:iNumber];
+        
+        XCTAssertEqualObjects(iNumber, key, @"The key ordering is not correct");
+        XCTAssertEqualObjects(iString, obj, @"The value ordering is not correct");
+    }];
 }
 
 @end

@@ -20,4 +20,21 @@
     [self removeObjectForKey:[self lastKey]];
 }
 
+#pragma mark - Sorting
+
+-(void)sortEntriesByKeysUsingDescriptors:(NSArray *)sortDescriptors
+{
+    [orderedKeySet sortUsingDescriptors:sortDescriptors];
+}
+
+-(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr
+{
+    [self sortEntriesByKeysWithOptions:NSSortStable usingComparator:cmptr];
+}
+
+-(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr
+{
+    [orderedKeySet sortWithOptions:opts usingComparator:cmptr];
+}
+
 @end

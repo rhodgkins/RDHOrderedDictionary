@@ -93,4 +93,10 @@
 -(void)removeFirstEntry;
 -(void)removeLastEntry;
 
+/// @name Sorting Entries
+
+-(void)sortEntriesByKeysUsingDescriptors:(NSArray *)sortDescriptors;
+-(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr;
+-(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+
 @end
