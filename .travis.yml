@@ -3,7 +3,7 @@ xcode_project: TestProject/RDHOrderedDictionary.xcodeproj
 xcode_scheme: RDHOrderedDictionary
 xcode_sdk: macosx
 
-after_script:
+after_success:
   - gem install cocoapods
   - pod --version
   - pod spec lint RDHOrderedDictionary.podspec --verbose
