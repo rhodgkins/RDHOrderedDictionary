@@ -16,7 +16,7 @@
 
 #import "RDHOrderedDictionary.h"
 
-static NSUInteger const RDHObjectCount = 1000;
+static NSUInteger const RDHObjectCount = 100000;
 
 @implementation RDHMutableTests
 
@@ -33,14 +33,6 @@ static NSUInteger const RDHObjectCount = 1000;
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     self.spellOutFormatter = nil;
     [super tearDown];
-}
-
--(void)test1
-{
-    XCTAssertEqualObjects(@{}, @{}, @"EQ");
-    XCTAssertEqualObjects(@{}, [@{} mutableCopy], @"EQ");
-    XCTAssertEqualObjects([@{} mutableCopy], @{}, @"EQ");
-    XCTAssertEqualObjects([@{} mutableCopy], [@{} mutableCopy], @"EQ");
 }
 
 -(void)testImmutableToImmutableCopy
