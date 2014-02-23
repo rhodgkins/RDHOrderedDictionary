@@ -43,9 +43,9 @@
 /* Begin PBXFileReference section */
 		44B31BA018BA16D300A99AFE /* RDHOrderedDictionary_RDHInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary_RDHInternal.h; sourceTree = "<group>"; };
 		44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHReorderingTests.m; sourceTree = "<group>"; };
+		44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionaryTests-Prefix.pch"; sourceTree = "<group>"; };
 		44E713EE18B9FAD500A99FDF /* RDHOrderedDictionary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RDHOrderedDictionary; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E713F118B9FAD500A99FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		44E713F718B9FAD500A99FDF /* RDHOrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
 		44E7140018B9FD2900A99FDF /* RDHOrderedDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary.h; sourceTree = "<group>"; };
 		44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDHOrderedDictionary.m; sourceTree = "<group>"; };
 		44E7140718B9FDAF00A99FDF /* RDHOrderedDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RDHOrderedDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				44E7141818B9FF8900A99FDF /* main.m */,
-				44E713F718B9FAD500A99FDF /* RDHOrderedDictionary-Prefix.pch */,
 			);
 			path = RDHOrderedDictionary;
 			sourceTree = "<group>";
@@ -130,6 +129,7 @@
 		44E7141F18BA040900A99FDF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */,
 				44E7142018BA040900A99FDF /* RDHInitalizerTests.m */,
 				44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */,
 			);
@@ -269,8 +269,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RDHOrderedDictionary-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -308,8 +306,6 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RDHOrderedDictionary-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -342,6 +338,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/RDHOrderedDictionaryTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -359,6 +357,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/RDHOrderedDictionaryTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = RDH_TESTS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
