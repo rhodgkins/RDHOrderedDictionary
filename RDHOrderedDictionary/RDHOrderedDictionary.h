@@ -19,6 +19,9 @@
 #pragma mark - Comparing Dictionaries
 /// @name Comparing Dictionaries
 
+/// This only compares the contents and not the ordering use `-isEqualToOrderedDictionary:` to check the ordering.
+-(BOOL)isEqualToDictionary:(NSDictionary *)otherDictionary;
+
 -(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary;
 
 @end
@@ -70,6 +73,8 @@
 /// @name Adding and removing objects
 
 -(void)removeObjectForKey:(id)aKey;
+
+/// @see `reordersWhenInsertingAlreadyPresentKeys`
 -(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
 
 @end
@@ -78,9 +83,12 @@
 
 /// @name Adding and removing objects
 
+/// Adds the entries from the provided dictionary as they are ordered in that dictionary.
 -(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
 -(void)removeAllObjects;
 -(void)removeObjectsForKeys:(NSArray *)keyArray;
+
+/// Replaces the contents of this dictionary with the provided one keeping the order as they were ordered in that dictionary.
 -(void)setDictionary:(NSDictionary *)otherDictionary;
 -(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key;
 
@@ -90,16 +98,23 @@
 
 /// @name Adding and removing objects
 
+/// Removes the `-firstKey` and its value.
 -(void)removeFirstEntry;
+
+/// Removes the `-lastKey` and its value.
 -(void)removeLastEntry;
 
 /// @name Sorting Entries
 
+/// Sorts the array in place using the provided sort descriptors.
 -(void)sortEntriesByKeysUsingDescriptors:(NSArray *)sortDescriptors;
 
 #if NS_BLOCKS_AVAILABLE
 
+/// Sorts the array in place using the provided comparator.
 -(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr;
+
+/// Sorts the array in place using the provided comparator and specified options.
 -(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
 
 #endif
