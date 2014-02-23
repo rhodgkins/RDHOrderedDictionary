@@ -4,7 +4,7 @@ xcode_scheme: RDHOrderedDictionary
 xcode_sdk: macosx
 
 after_success:
-  - gem install cocoapods
+  - gem install cocoapods -q
   - pod --version
-  - pod spec lint RDHOrderedDictionary.podspec --verbose
+  - pod spec lint RDHOrderedDictionary.podspec
 
