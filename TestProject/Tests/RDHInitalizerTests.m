@@ -35,6 +35,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [super tearDown];
 }
 
+/// Nothing is really tested, just to see the ordering of standard dictionaries
 -(void)testNSDictionaries
 {
     __unused NSDictionary *numberKeysDict = @{@(0) : [self.spellOutFormatter stringFromNumber:@(0)],
@@ -53,6 +54,7 @@ static NSUInteger const RDHObjectCount = 10000;
                                      [self.spellOutFormatter stringFromNumber:@(6)] : @(6)};
 }
 
+/// Nothing is really tested, just to see the ordering of standard dictionaries
 -(void)testNSMutableDictionaries
 {
     NSMutableDictionary *numberKeysDict = [NSMutableDictionary dictionaryWithCapacity:RDHObjectCount];
@@ -67,6 +69,7 @@ static NSUInteger const RDHObjectCount = 10000;
     }
 }
 
+/// Tests the ordering of the immutable dictionaries
 -(void)testImmutableOrdering
 {
     NSDictionary *numberKeysDict = [RDHOrderedDictionary dictionaryWithObjectsAndKeys:
@@ -93,6 +96,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [self checkDictionaryWithStringKeys:stringKeysDict count:7];
 }
 
+/// Tests the ordering of the mutable dictionaries
 -(void)testMutableOrderingByInitializing
 {
     NSDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionaryWithObjectsAndKeys:
@@ -119,6 +123,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [self checkDictionaryWithStringKeys:stringKeysDict count:7];
 }
 
+/// Tests the ordering of the mutable dictionaries when initialized with +dictionary by adding [0,RDHObjectCount) and checking the ordering of the keys are correct
 -(void)testMutableOrderingByAddingIntializedWithDictionary
 {
     RDHMutableOrderedDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionary];
@@ -136,6 +141,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [self checkDictionaryWithStringKeys:stringKeysDict count:RDHObjectCount];
 }
 
+/// Tests the ordering of the mutable dictionaries when initialized with +new by adding [0,RDHObjectCount) and checking the ordering of the keys are correct
 -(void)testMutableOrderingByAddingIntializedWithNew
 {
     RDHMutableOrderedDictionary *numberKeysDict = [RDHMutableOrderedDictionary new];
@@ -153,6 +159,7 @@ static NSUInteger const RDHObjectCount = 10000;
     [self checkDictionaryWithStringKeys:stringKeysDict count:RDHObjectCount];
 }
 
+/// Tests the ordering of the mutable dictionaries when initialized with +dictionaryWithCapacity by adding [0,RDHObjectCount) and checking the ordering of the keys are correct
 -(void)testMutableOrderingByAddingIntializedWithInitWithCapacity
 {
     RDHMutableOrderedDictionary *numberKeysDict = [RDHMutableOrderedDictionary dictionaryWithCapacity:RDHObjectCount];
