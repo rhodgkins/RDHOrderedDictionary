@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44E713F218B9FAD500A99FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E713F118B9FAD500A99FDF /* Foundation.framework */; };
+		44E7140918B9FDAF00A99FDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E7140818B9FDAF00A99FDF /* XCTest.framework */; };
+		44E7141918B9FF8900A99FDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7141818B9FF8900A99FDF /* main.m */; };
+		44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7142018BA040900A99FDF /* RDHInitalizerTests.m */; };
+		44E7142218BA052000A99FDF /* RDHOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */; };
+		44E7142318BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */; };
+		44E7142418BA052000A99FDF /* RDHOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */; };
+		44E7142518BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44E7141318B9FDAF00A99FDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E713E618B9FAD500A99FDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E713ED18B9FAD500A99FDF;
+			remoteInfo = RDHOrderedDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		44E713EC18B9FAD500A99FDF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		44E713EE18B9FAD500A99FDF /* RDHOrderedDictionary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RDHOrderedDictionary; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E713F118B9FAD500A99FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		44E713F718B9FAD500A99FDF /* RDHOrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
+		44E7140018B9FD2900A99FDF /* RDHOrderedDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHOrderedDictionary.h; sourceTree = "<group>"; };
+		44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDHOrderedDictionary.m; sourceTree = "<group>"; };
+		44E7140718B9FDAF00A99FDF /* RDHOrderedDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RDHOrderedDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E7140818B9FDAF00A99FDF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		44E7141818B9FF8900A99FDF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDHMutableOrderedDictionary.m; sourceTree = "<group>"; };
+		44E7142018BA040900A99FDF /* RDHInitalizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHInitalizerTests.m; sourceTree = "<group>"; };
+		80C69A1C00A54FA2A3161959 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44E713EB18B9FAD500A99FDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E713F218B9FAD500A99FDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E7140418B9FDAF00A99FDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E7140918B9FDAF00A99FDF /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44E713E518B9FAD500A99FDF = {
+			isa = PBXGroup;
+			children = (
+				44E713FF18B9FC7700A99FDF /* Classes */,
+				44E713F318B9FAD500A99FDF /* RDHOrderedDictionary */,
+				44E7141F18BA040900A99FDF /* Tests */,
+				44E713F018B9FAD500A99FDF /* Frameworks */,
+				44E713EF18B9FAD500A99FDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44E713EF18B9FAD500A99FDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44E713EE18B9FAD500A99FDF /* RDHOrderedDictionary */,
+				44E7140718B9FDAF00A99FDF /* RDHOrderedDictionaryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44E713F018B9FAD500A99FDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44E713F118B9FAD500A99FDF /* Foundation.framework */,
+				44E7140818B9FDAF00A99FDF /* XCTest.framework */,
+				80C69A1C00A54FA2A3161959 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44E713F318B9FAD500A99FDF /* RDHOrderedDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				44E7141818B9FF8900A99FDF /* main.m */,
+				44E713F718B9FAD500A99FDF /* RDHOrderedDictionary-Prefix.pch */,
+			);
+			path = RDHOrderedDictionary;
+			sourceTree = "<group>";
+		};
+		44E713FF18B9FC7700A99FDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				44E7140018B9FD2900A99FDF /* RDHOrderedDictionary.h */,
+				44E7140118B9FD2900A99FDF /* RDHOrderedDictionary.m */,
+				44E7141B18BA00FF00A99FDF /* RDHMutableOrderedDictionary.m */,
+			);
+			name = Classes;
+			path = ../RDHOrderedDictionary;
+			sourceTree = "<group>";
+		};
+		44E7141F18BA040900A99FDF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				44E7142018BA040900A99FDF /* RDHInitalizerTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44E713ED18B9FAD500A99FDF /* RDHOrderedDictionary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44E713FC18B9FAD500A99FDF /* Build configuration list for PBXNativeTarget "RDHOrderedDictionary" */;
+			buildPhases = (
+				44E713EA18B9FAD500A99FDF /* Sources */,
+				44E713EB18B9FAD500A99FDF /* Frameworks */,
+				44E713EC18B9FAD500A99FDF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RDHOrderedDictionary;
+			productName = RDHOrderedDictionary;
+			productReference = 44E713EE18B9FAD500A99FDF /* RDHOrderedDictionary */;
+			productType = "com.apple.product-type.tool";
+		};
+		44E7140618B9FDAF00A99FDF /* RDHOrderedDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44E7141518B9FDAF00A99FDF /* Build configuration list for PBXNativeTarget "RDHOrderedDictionaryTests" */;
+			buildPhases = (
+				44E7140318B9FDAF00A99FDF /* Sources */,
+				44E7140418B9FDAF00A99FDF /* Frameworks */,
+				44E7140518B9FDAF00A99FDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44E7141418B9FDAF00A99FDF /* PBXTargetDependency */,
+			);
+			name = RDHOrderedDictionaryTests;
+			productName = "RDHOrderedDictionary Tests";
+			productReference = 44E7140718B9FDAF00A99FDF /* RDHOrderedDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44E713E618B9FAD500A99FDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Rich H";
+				TargetAttributes = {
+					44E7140618B9FDAF00A99FDF = {
+						TestTargetID = 44E713ED18B9FAD500A99FDF;
+					};
+				};
+			};
+			buildConfigurationList = 44E713E918B9FAD500A99FDF /* Build configuration list for PBXProject "RDHOrderedDictionary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 44E713E518B9FAD500A99FDF;
+			productRefGroup = 44E713EF18B9FAD500A99FDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44E713ED18B9FAD500A99FDF /* RDHOrderedDictionary */,
+				44E7140618B9FDAF00A99FDF /* RDHOrderedDictionaryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44E7140518B9FDAF00A99FDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44E713EA18B9FAD500A99FDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E7142218BA052000A99FDF /* RDHOrderedDictionary.m in Sources */,
+				44E7142318BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */,
+				44E7141918B9FF8900A99FDF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E7140318B9FDAF00A99FDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E7142418BA052000A99FDF /* RDHOrderedDictionary.m in Sources */,
+				44E7142518BA052000A99FDF /* RDHMutableOrderedDictionary.m in Sources */,
+				44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44E7141418B9FDAF00A99FDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E713ED18B9FAD500A99FDF /* RDHOrderedDictionary */;
+			targetProxy = 44E7141318B9FDAF00A99FDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		44E713FA18B9FAD500A99FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RDHOrderedDictionary-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		44E713FB18B9FAD500A99FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RDHOrderedDictionary-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		44E713FD18B9FAD500A99FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		44E713FE18B9FAD500A99FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		44E7141618B9FDAF00A99FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = RDH_TESTS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		44E7141718B9FDAF00A99FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = RDH_TESTS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44E713E918B9FAD500A99FDF /* Build configuration list for PBXProject "RDHOrderedDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44E713FA18B9FAD500A99FDF /* Debug */,
+				44E713FB18B9FAD500A99FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44E713FC18B9FAD500A99FDF /* Build configuration list for PBXNativeTarget "RDHOrderedDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44E713FD18B9FAD500A99FDF /* Debug */,
+				44E713FE18B9FAD500A99FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44E7141518B9FDAF00A99FDF /* Build configuration list for PBXNativeTarget "RDHOrderedDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44E7141618B9FDAF00A99FDF /* Debug */,
+				44E7141718B9FDAF00A99FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44E713E618B9FAD500A99FDF /* Project object */;
+}
