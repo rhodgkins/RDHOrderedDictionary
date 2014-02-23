@@ -12,18 +12,13 @@ FOUNDATION_EXPORT NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingO
 
 @interface RDHOrderedDictionary ()
 {
-@private
-    NSOrderedSet *orderedKeySet;
-    NSDictionary *backingDictionary;
+@package
+    NSMutableOrderedSet *orderedKeySet;
+    NSMutableDictionary *backingDictionary;
 }
 
 @end
 
 @interface RDHMutableOrderedDictionary ()
-{
-@private
-    NSMutableOrderedSet *orderedKeySet;
-    NSMutableDictionary *backingDictionary;
-}
 
 @end

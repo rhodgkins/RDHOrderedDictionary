@@ -8,7 +8,40 @@
 
 #import "RDHOrderedDictionary_RDHInternal.h"
 
+NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> objects[], NSUInteger cnt)
+{
+    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithCapacity:cnt];
+    
+    for (NSUInteger i=0; i<cnt; i++) {
+        id<NSCopying> object = objects[i];
+        NSUInteger currentIndex = [set indexOfObject:object];
+        
+        if (currentIndex != NSNotFound) {
+            // Remove old object
+            [set removeObjectAtIndex:currentIndex];
+        }
+        [set addObject:object];
+    }
+    
+    return set;
+}
+
 @implementation RDHOrderedDictionary
+
++(instancetype)dictionaryWithOrderedDictionary:(RDHOrderedDictionary *)dictionary
+{
+    return [[self alloc] initWithOrderedDictionary:dictionary];
+}
+
+-(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        orderedKeySet = [dictionary->orderedKeySet mutableCopy];
+        backingDictionary = [dictionary->backingDictionary mutableCopy];
+    }
+    return self;
+}
 
 #pragma mark - Immutable Methods
 
@@ -16,8 +49,8 @@
 {
     self = [super init];
     if (self) {
-        orderedKeySet = [NSOrderedSet orderedSet];
-        backingDictionary = [NSDictionary dictionary];
+        orderedKeySet = [NSMutableOrderedSet orderedSet];
+        backingDictionary = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -26,8 +59,8 @@
 {
     self = [super init];
     if (self) {
-        orderedKeySet = [NSMutableOrderedSetFromObjectsPreservingOrder(keys, cnt) copy];
-        backingDictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
+        orderedKeySet = NSMutableOrderedSetFromObjectsPreservingOrder(keys, cnt);
+        backingDictionary = [NSMutableDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     return self;
 }
@@ -44,7 +77,35 @@
 
 -(NSEnumerator *)keyEnumerator
 {
-    return [orderedKeySet objectEnumerator];
+    return [[orderedKeySet copy] objectEnumerator];
+}
+
+#pragma mark - Comparison methods
+
+-(BOOL)isEqualToDictionary:(NSDictionary *)otherDictionary
+{
+    return [self isEqualToOrderedDictionary:(id) otherDictionary];
+}
+
+-(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary
+{
+    if (![otherDictionary isKindOfClass:[RDHOrderedDictionary class]]) {
+        return NO;
+    }
+    // Now check the keys are in the same order
+    return [orderedKeySet isEqualToOrderedSet:otherDictionary->orderedKeySet];
+}
+
+#pragma mark - Copying
+
+-(id)copyWithZone:(NSZone *)zone
+{
+    return [[RDHOrderedDictionary allocWithZone:zone] initWithOrderedDictionary:self];
+}
+
+-(id)mutableCopyWithZone:(NSZone *)zone
+{
+    return [[RDHMutableOrderedDictionary allocWithZone:zone] initWithOrderedDictionary:self];
 }
 
 @end

@@ -10,9 +10,22 @@
 
 @interface RDHOrderedDictionary : NSDictionary
 
++(instancetype)dictionaryWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
+
+-(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
+
+#pragma mark - Comparison methods
+
+-(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary;
+
 @end
 
-@interface RDHMutableOrderedDictionary : NSMutableDictionary
+@interface RDHMutableOrderedDictionary : RDHOrderedDictionary
+
++(instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
+
+-(instancetype)init;	/* designated initializer */
+-(instancetype)initWithCapacity:(NSUInteger)numItems;	/* designated initializer */
 
 /**
  * This specifies that the order of the keys (and therefore their values) are kept as they are added. That is adding the keys [0, 1, 2] and adding 0 will mean the order of the keys is now [1, 2, 0].
@@ -21,5 +34,18 @@
  * Defaults to `YES`.
  */
 @property (nonatomic) BOOL reordersWhenInsertingAlreadyPresentKeys;
+
+-(void)removeObjectForKey:(id)aKey;
+-(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
+
+@end
+
+@interface RDHMutableOrderedDictionary (RDHExtendedMutableOrderedDictionary)
+
+-(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
+-(void)removeAllObjects;
+-(void)removeObjectsForKeys:(NSArray *)keyArray;
+-(void)setDictionary:(NSDictionary *)otherDictionary;
+-(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key NS_AVAILABLE(10_8, 6_0);
 
 @end

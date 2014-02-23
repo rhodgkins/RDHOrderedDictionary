@@ -8,27 +8,14 @@
 
 #import "RDHOrderedDictionary_RDHInternal.h"
 
-NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> objects[], NSUInteger cnt)
-{
-    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithCapacity:cnt];
-    
-    for (NSUInteger i=0; i<cnt; i++) {
-        id<NSCopying> object = objects[i];
-        NSUInteger currentIndex = [set indexOfObject:object];
-        
-        if (currentIndex != NSNotFound) {
-            // Remove old object
-            [set removeObjectAtIndex:currentIndex];
-        }
-        [set addObject:object];
-    }
-    
-    return set;
-}
-
 @implementation RDHMutableOrderedDictionary
 
 #pragma mark - Immutable Methods
+
++(instancetype)dictionaryWithCapacity:(NSUInteger)numItems
+{
+    return [[self alloc] initWithCapacity:numItems];
+}
 
 -(instancetype)init
 {
@@ -55,16 +42,6 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
         backingDictionary = [NSMutableDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     return self;
-}
-
--(NSUInteger)count
-{
-    return [orderedKeySet count];
-}
-
--(id)objectForKey:(id)aKey
-{
-    return [backingDictionary objectForKey:aKey];
 }
 
 -(NSEnumerator *)keyEnumerator
