@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version = '0.1.0'
   s.license = 'MIT'
   
-  s.summary = 'Inline view that expands to show a UIPickerView/UIDatePickerView.'
+  s.summary = 'Ordered version of NSDictionary.'
   s.homepage = 'https://github.com/rhodgkins/RDHOrderedDictionary'
   s.author = 'Rich Hodgkins'
   s.source = { :git => 'https://github.com/rhodgkins/RDHOrderedDictionary.git', :tag => s.version.to_s }
