@@ -15,6 +15,8 @@
 @interface RDHMutableOrderedDictionary : NSMutableDictionary
 
 /**
+ * This specifies that the order of the keys (and therefore their values) are kept as they are added. That is adding the keys [0, 1, 2] and adding 0 will mean the order of the keys is now [1, 2, 0].
+ * Setting this to `NO` will mean the order would instead not change as 0 is already present.
  *
  * Defaults to `YES`.
  */
