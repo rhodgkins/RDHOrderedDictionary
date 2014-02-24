@@ -18,6 +18,16 @@
 }
 
 // Designated initialiser
+-(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary
+{
+    self = [super initWithOrderedDictionary:dictionary];
+    if (self) {
+        _reordersWhenInsertingAlreadyPresentKeys = YES;
+    }
+    return self;
+}
+
+// Designated initialiser
 -(instancetype)init
 {
     return [self initWithCapacity:0];
