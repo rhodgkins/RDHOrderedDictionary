@@ -15,7 +15,7 @@
 #pragma mark - Combining and Recombining Dictionaries
 /// @name Combining and Recombining Dictionaries
 
-/// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
+/// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored.
 -(void)intersectIgnoringValuesFromDictionary:(NSDictionary *)dictionary;
 
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
