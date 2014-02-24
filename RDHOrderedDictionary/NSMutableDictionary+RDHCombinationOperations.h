@@ -18,4 +18,7 @@
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
 -(void)intersectIgnoringValuesFromDictionary:(NSDictionary *)dictionary;
 
+/// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
+-(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary;
+
 @end

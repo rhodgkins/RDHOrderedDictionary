@@ -22,4 +22,21 @@
     [self removeObjectsForKeys:missingKeys];
 }
 
+-(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary
+{
+    // First get all the keys
+    NSMutableArray *missingKeys = [[self allKeys] mutableCopy];
+    
+    // Now remove all keys that are present in the provided dictionary
+    [missingKeys removeObjectsInArray:[dictionary allKeys]];
+    
+    // We're now left with a set of keys from the receiver that don't exist in the provided dictionary
+    [self removeObjectsForKeys:missingKeys];
+    
+    // Now add the needed objects
+    for (id key in [self allKeys]) {
+        [self setObject:[dictionary objectForKey:key] forKey:key];
+    }
+}
+
 @end

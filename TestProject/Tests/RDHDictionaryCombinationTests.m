@@ -66,6 +66,46 @@
     XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
 }
 
+-(void)testIntersectReplacingValuesFromDictionary
+{
+    NSDictionary *completeDictionary = [self filledNumberKeyDictionary];
+    
+    NSDictionary *subDictionary = @{@(1) : [NSNull null], @(0) : [NSNull null], @(10) : [NSNull null]};
+    NSMutableDictionary *dict = [completeDictionary mutableCopy];
+    [dict intersectReplacingValuesFromDictionary:subDictionary];
+    NSDictionary *testDict = @{@(1) : [NSNull null],
+                               @(0) : [NSNull null]};
+    XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
+    
+    
+    subDictionary = @{};
+    dict = [completeDictionary mutableCopy];
+    [dict intersectReplacingValuesFromDictionary:subDictionary];
+    testDict = @{};
+    XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
+    
+    
+    subDictionary = @{@(10) : [NSNull null]};
+    dict = [completeDictionary mutableCopy];
+    [dict intersectReplacingValuesFromDictionary:subDictionary];
+    testDict = @{};
+    XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
+    
+    
+    subDictionary = [completeDictionary copy];
+    dict = [completeDictionary mutableCopy];
+    [dict intersectReplacingValuesFromDictionary:subDictionary];
+    testDict = [completeDictionary copy];
+    XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
+    
+    subDictionary = @{@(1) : [self.spellOutFormatter stringFromNumber:@(1)], @(0) : [NSNull null], @(10) : [NSNull null]};
+    dict = [completeDictionary mutableCopy];
+    [dict intersectReplacingValuesFromDictionary:subDictionary];
+    testDict = @{@(1) : [self.spellOutFormatter stringFromNumber:@(1)],
+                @(0) : [NSNull null]};
+    XCTAssertEqualObjects(dict, testDict, @"Intersection dictionary not equal");
+}
+
 #pragma mark - Dictionary creation
 
 -(NSDictionary *)filledNumberKeyDictionary
