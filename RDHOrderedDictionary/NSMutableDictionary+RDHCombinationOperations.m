@@ -39,4 +39,9 @@
     }
 }
 
+-(void)minusDictionary:(NSDictionary *)dictionary
+{
+    [self removeObjectsForKeys:[dictionary allKeys]];
+}
+
 @end

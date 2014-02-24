@@ -21,4 +21,7 @@
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
 -(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary;
 
+/// Removes the entries from the receiver where their keys are present in the provided dictionary. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
+-(void)minusDictionary:(NSDictionary *)dictionary;
+
 @end
