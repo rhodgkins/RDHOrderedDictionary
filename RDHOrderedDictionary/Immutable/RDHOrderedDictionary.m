@@ -33,6 +33,7 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
     return [[self alloc] initWithOrderedDictionary:dictionary];
 }
 
+// Designated initialiser
 -(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary
 {
     self = [super init];
@@ -45,6 +46,7 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
 
 #pragma mark - Immutable Methods
 
+// Designated initialiser
 -(instancetype)init
 {
     self = [super init];
@@ -55,6 +57,7 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
     return self;
 }
 
+// Designated initialiser
 -(instancetype)initWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
     self = [super init];

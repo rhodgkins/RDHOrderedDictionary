@@ -17,11 +17,13 @@
     return [[self alloc] initWithCapacity:numItems];
 }
 
+// Designated initialiser
 -(instancetype)init
 {
     return [self initWithCapacity:0];
 }
 
+// Designated initialiser
 -(instancetype)initWithCapacity:(NSUInteger)numItems
 {
     self = [super init];
@@ -33,6 +35,7 @@
     return self;
 }
 
+// Designated initialiser
 -(instancetype)initWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
     self = [super initWithObjects:objects forKeys:keys count:cnt];
