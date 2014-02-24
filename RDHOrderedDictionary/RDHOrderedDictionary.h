@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - Immutable Ordered Dictionary
+
 @interface RDHOrderedDictionary : NSDictionary
 
 /// @name Creating and Initializing a Dictionary
@@ -22,9 +24,13 @@
 /// This only compares the contents and not the ordering use `-isEqualToOrderedDictionary:` to check the ordering.
 -(BOOL)isEqualToDictionary:(NSDictionary *)otherDictionary;
 
+/// Calls `isEqualToDictionary:` and then checks the ordering of the keys.
 -(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary;
 
 @end
+
+
+#pragma mark - Ordered Extensions
 
 @interface RDHOrderedDictionary (RDHOrderedExtensions)
 
@@ -48,9 +54,7 @@
 
 @end
 
-/*******************************************************/
-/************	Mutable Ordered Dictionary	************/
-/*******************************************************/
+
 #pragma mark - Mutable Ordered Dictionary
 
 @interface RDHMutableOrderedDictionary : RDHOrderedDictionary
@@ -63,6 +67,7 @@
  */
 @property (nonatomic) BOOL reordersWhenInsertingAlreadyPresentKeys;
 
+#pragma mark - Creating and Initializing a Mutable Dictionary
 /// @name Creating and Initializing a Mutable Dictionary
 
 +(instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
@@ -70,17 +75,25 @@
 -(instancetype)init;
 -(instancetype)initWithCapacity:(NSUInteger)numItems;
 
+#pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
 -(void)removeObjectForKey:(id)aKey;
 
-/// @see `reordersWhenInsertingAlreadyPresentKeys`
+/**
+ * @see `reordersWhenInsertingAlreadyPresentKeys`
+ * @warning anObject must not be `nil`.
+ */
 -(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
 
 @end
 
+
+#pragma mark - Extended Mutable Ordered Dictionary
+
 @interface RDHMutableOrderedDictionary (RDHExtendedMutableOrderedDictionary)
 
+#pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
 /// Adds the entries from the provided dictionary as they are ordered in that dictionary.
@@ -94,16 +107,21 @@
 
 @end
 
+
+#pragma mark - Ordered Extensions
+
 @interface RDHMutableOrderedDictionary (RDHOrderedExtensions)
 
+#pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
-/// Removes the `-firstKey` and its value.
+/// Removes the `firstKey` and its value.
 -(void)removeFirstEntry;
 
-/// Removes the `-lastKey` and its value.
+/// Removes the `lastKey` and its value.
 -(void)removeLastEntry;
 
+#pragma mark - Sorting Entries
 /// @name Sorting Entries
 
 /// Sorts the array in place using the provided sort descriptors.
