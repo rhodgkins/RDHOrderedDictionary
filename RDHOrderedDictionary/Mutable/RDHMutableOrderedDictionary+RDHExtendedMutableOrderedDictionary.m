@@ -29,6 +29,18 @@
     }
 }
 
+-(void)removeObjectsForKeySet:(NSSet *)keySet
+{
+    for (id key in keySet) {
+        [self removeObjectForKey:key];
+    }
+}
+
+-(void)removeObjectsForOrderedKeySet:(NSOrderedSet *)keySet
+{
+    [self removeObjectsForKeySet:[keySet set]];
+}
+
 -(void)setDictionary:(NSDictionary *)otherDictionary
 {
     [self removeAllObjects];

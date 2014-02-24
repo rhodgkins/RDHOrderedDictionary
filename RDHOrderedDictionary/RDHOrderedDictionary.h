@@ -100,6 +100,8 @@
 -(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
 -(void)removeAllObjects;
 -(void)removeObjectsForKeys:(NSArray *)keyArray;
+-(void)removeObjectsForKeySet:(NSSet *)keySet;
+-(void)removeObjectsForOrderedKeySet:(NSOrderedSet *)orderedKeySet;
 
 /// Replaces the contents of this dictionary with the provided one keeping the order as they were ordered in that dictionary.
 -(void)setDictionary:(NSDictionary *)otherDictionary;
