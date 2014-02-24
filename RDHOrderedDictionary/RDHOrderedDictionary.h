@@ -108,9 +108,9 @@
 @end
 
 
-#pragma mark - Ordered Extensions
+#pragma mark - Mutable Ordered Extensions
 
-@interface RDHMutableOrderedDictionary (RDHOrderedExtensions)
+@interface RDHMutableOrderedDictionary (RDHMutableOrderedExtensions)
 
 #pragma mark - Adding and removing objects
 /// @name Adding and removing objects

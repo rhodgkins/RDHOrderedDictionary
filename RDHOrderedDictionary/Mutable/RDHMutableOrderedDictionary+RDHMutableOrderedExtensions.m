@@ -1,5 +1,5 @@
 //
-//  RDHMutableOrderedDictionary+RDHOrderedExtensions.m
+//  RDHMutableOrderedDictionary+RDHMutableOrderedExtensions.m
 //  RDHOrderedDictionary
 //
 //  Created by Richard Hodgkins on 23/02/2014.
@@ -8,7 +8,7 @@
 
 #import "RDHOrderedDictionary_RDHInternal.h"
 
-@implementation RDHMutableOrderedDictionary (RDHOrderedExtensions)
+@implementation RDHMutableOrderedDictionary (RDHMutableOrderedExtensions)
 
 -(void)removeFirstEntry
 {
