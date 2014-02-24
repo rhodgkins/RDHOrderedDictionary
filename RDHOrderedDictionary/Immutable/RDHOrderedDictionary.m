@@ -85,14 +85,29 @@ NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCo
 
 #pragma mark - Comparison methods
 
+-(BOOL)isEqual:(id)object
+{
+    if (![object isKindOfClass:[RDHOrderedDictionary class]]) {
+        return NO;
+    }
+    return [self isEqualToOrderedDictionary:object];
+}
+
 -(BOOL)isEqualToDictionary:(NSDictionary *)otherDictionary
 {
-    return [self isEqualToOrderedDictionary:(id) otherDictionary];
+    if ([otherDictionary isKindOfClass:[RDHOrderedDictionary class]]) {
+        return [self isEqualToOrderedDictionary:(id) otherDictionary];
+    }
+    return [super isEqualToDictionary:otherDictionary];
 }
 
 -(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary
 {
     if (![otherDictionary isKindOfClass:[RDHOrderedDictionary class]]) {
+        return NO;
+    }
+    // Check the contents
+    if (![super isEqualToDictionary:otherDictionary]) {
         return NO;
     }
     // Now check the keys are in the same order
