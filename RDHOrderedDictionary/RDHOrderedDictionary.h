@@ -96,14 +96,15 @@
 #pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
-/// Adds the entries from the provided dictionary as they are ordered in that dictionary.
+/// Adds (or replaces) the entries from the provided dictionary as they are ordered in that dictionary.
 -(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
+
 -(void)removeAllObjects;
 -(void)removeObjectsForKeys:(NSArray *)keyArray;
 -(void)removeObjectsForKeySet:(NSSet *)keySet;
 -(void)removeObjectsForOrderedKeySet:(NSOrderedSet *)orderedKeySet;
 
-/// Replaces the contents of this dictionary with the provided one keeping the order as they were ordered in that dictionary.
+/// Replaces the entire contents of this dictionary with the provided one keeping the order as they were ordered in that dictionary.
 -(void)setDictionary:(NSDictionary *)otherDictionary;
 -(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key;
 
