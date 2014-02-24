@@ -24,4 +24,7 @@
 /// Removes the entries from the receiver where their keys are present in the provided dictionary. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
 -(void)minusDictionary:(NSDictionary *)dictionary;
 
+/// Adds entries to the receiver from the provided dictionary. This method is the same as `addEntriesFromDictionary:`. @see -addEntriesFromDictionary:
+-(void)unionDictionary:(NSDictionary *)dictionary;
+
 @end

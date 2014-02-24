@@ -148,6 +148,48 @@
     XCTAssertEqualObjects(dict, testDict, @"Minus dictionary not equal");
 }
 
+-(void)testUnion
+{
+    NSDictionary *completeDictionary = [self filledNumberKeyDictionary];
+    
+    NSDictionary *subDictionary = @{@(1) : [NSNull null], @(0) : [NSNull null], @(10) : [NSNull null]};
+    NSMutableDictionary *dict = [completeDictionary mutableCopy];
+    [dict unionDictionary:subDictionary];
+    NSMutableDictionary *testDict = [completeDictionary mutableCopy];
+    [testDict addEntriesFromDictionary:subDictionary];
+    XCTAssertEqualObjects(dict, testDict, @"Union dictionary not equal");
+    
+    
+    subDictionary = @{};
+    dict = [completeDictionary mutableCopy];
+    [dict unionDictionary:subDictionary];
+    testDict = [completeDictionary mutableCopy];
+    XCTAssertEqualObjects(dict, testDict, @"Union dictionary not equal");
+    
+    
+    subDictionary = @{@(10) : [NSNull null]};
+    dict = [completeDictionary mutableCopy];
+    [dict unionDictionary:subDictionary];
+    testDict = [completeDictionary mutableCopy];
+    [testDict addEntriesFromDictionary:subDictionary];
+    XCTAssertEqualObjects(dict, testDict, @"Union dictionary not equal");
+    
+    
+    subDictionary = [completeDictionary copy];
+    dict = [completeDictionary mutableCopy];
+    [dict unionDictionary:subDictionary];
+    testDict = [completeDictionary mutableCopy];
+    XCTAssertEqualObjects(dict, testDict, @"Union dictionary not equal");
+    
+    
+    subDictionary = @{@(1) : [self.spellOutFormatter stringFromNumber:@(1)], @(0) : [NSNull null], @(10) : [NSNull null]};
+    dict = [completeDictionary mutableCopy];
+    [dict unionDictionary:subDictionary];
+    testDict = [completeDictionary mutableCopy];
+    [testDict addEntriesFromDictionary:subDictionary];
+    XCTAssertEqualObjects(dict, testDict, @"Union dictionary not equal");
+}
+
 #pragma mark - Dictionary creation
 
 -(NSDictionary *)filledNumberKeyDictionary

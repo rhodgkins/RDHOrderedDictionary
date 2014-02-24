@@ -44,4 +44,9 @@
     [self removeObjectsForKeys:[dictionary allKeys]];
 }
 
+-(void)unionDictionary:(NSDictionary *)dictionary
+{
+    [self addEntriesFromDictionary:dictionary];
+}
+
 @end
