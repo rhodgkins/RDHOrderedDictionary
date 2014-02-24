@@ -81,7 +81,7 @@
 -(void)removeObjectForKey:(id)aKey;
 
 /**
- * @see `reordersWhenInsertingAlreadyPresentKeys`
+ * @see reordersWhenInsertingAlreadyPresentKeys
  * @warning anObject must not be `nil`.
  */
 -(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
