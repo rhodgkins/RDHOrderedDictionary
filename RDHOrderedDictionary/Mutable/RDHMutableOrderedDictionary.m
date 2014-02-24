@@ -35,11 +35,9 @@
 
 -(instancetype)initWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
-    self = [super init];
+    self = [super initWithObjects:objects forKeys:keys count:cnt];
     if (self) {
         _reordersWhenInsertingAlreadyPresentKeys = YES;
-        orderedKeySet = NSMutableOrderedSetFromObjectsPreservingOrder(keys, cnt);
-        backingDictionary = [NSMutableDictionary dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     return self;
 }
