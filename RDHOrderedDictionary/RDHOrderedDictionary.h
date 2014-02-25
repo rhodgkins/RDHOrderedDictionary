@@ -141,3 +141,25 @@
 #endif
 
 @end
+
+
+#pragma mark - Combination Operations
+
+@interface RDHMutableOrderedDictionary (RDHCombinationOperations)
+
+#pragma mark - Combining and Recombining Dictionaries
+/// @name Combining and Recombining Dictionaries
+
+/// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored.
+-(void)intersectIgnoringValuesFromDictionary:(NSDictionary *)dictionary;
+
+/// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
+-(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary;
+
+/// Removes the entries from the receiver where their keys are present in the provided dictionary. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
+-(void)minusDictionary:(NSDictionary *)dictionary;
+
+/// Adds entries to the receiver from the provided dictionary. This method is the same as `addEntriesFromDictionary:`. @see -addEntriesFromDictionary:
+-(void)unionDictionary:(NSDictionary *)dictionary;
+
+@end

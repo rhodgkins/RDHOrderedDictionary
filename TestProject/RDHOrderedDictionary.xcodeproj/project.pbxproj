@@ -22,6 +22,9 @@
 		44A9467E18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9467D18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m */; };
 		44A9467F18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9467D18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m */; };
 		44A9468118BBD9CE00CB9C32 /* RDHDictionaryCombinationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9468018BBD9CE00CB9C32 /* RDHDictionaryCombinationTests.m */; };
+		44A9468418BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9468318BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m */; };
+		44A9468518BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9468318BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m */; };
+		44A9468718BC045A00CB9C32 /* RDHOrderedDictionaryCombinationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9468618BC045A00CB9C32 /* RDHOrderedDictionaryCombinationTests.m */; };
 		44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */; };
 		44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */; };
 		44E713F218B9FAD500A99FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E713F118B9FAD500A99FDF /* Foundation.framework */; };
@@ -65,6 +68,8 @@
 		44A9467C18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+RDHCombinationOperations.h"; sourceTree = "<group>"; };
 		44A9467D18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+RDHCombinationOperations.m"; sourceTree = "<group>"; };
 		44A9468018BBD9CE00CB9C32 /* RDHDictionaryCombinationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHDictionaryCombinationTests.m; sourceTree = "<group>"; };
+		44A9468318BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RDHMutableOrderedDictionary+RDHCombinationOperations.m"; sourceTree = "<group>"; };
+		44A9468618BC045A00CB9C32 /* RDHOrderedDictionaryCombinationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHOrderedDictionaryCombinationTests.m; sourceTree = "<group>"; };
 		44B31BA118BA1C2900A99AFE /* RDHReorderingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHReorderingTests.m; sourceTree = "<group>"; };
 		44CF0E5718BA36360029EFC2 /* RDHOrderedDictionaryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RDHOrderedDictionaryTests-Prefix.pch"; sourceTree = "<group>"; };
 		44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHMutableTests.m; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 				44A9466518BA815700CB9C32 /* RDHMutableOrderedDictionary.m */,
 				44A9466418BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m */,
 				44A9467118BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHMutableOrderedExtensions.m */,
+				44A9468318BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m */,
 			);
 			path = Mutable;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 				44CF0E5818BA47370029EFC2 /* RDHMutableTests.m */,
 				44A9465B18BA777500CB9C32 /* RDHOrderedTests.m */,
 				44A9468018BBD9CE00CB9C32 /* RDHDictionaryCombinationTests.m */,
+				44A9468618BC045A00CB9C32 /* RDHOrderedDictionaryCombinationTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 				44E7141918B9FF8900A99FDF /* main.m in Sources */,
 				44A9467E18BBD8DF00CB9C32 /* NSMutableDictionary+RDHCombinationOperations.m in Sources */,
 				44A9467218BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHMutableOrderedExtensions.m in Sources */,
+				44A9468418BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m in Sources */,
 				44A9466A18BA815700CB9C32 /* RDHOrderedDictionary.m in Sources */,
 				44A9466C18BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44A9466818BA815700CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m in Sources */,
@@ -284,10 +292,12 @@
 				44A9468118BBD9CE00CB9C32 /* RDHDictionaryCombinationTests.m in Sources */,
 				44A9465C18BA777500CB9C32 /* RDHOrderedTests.m in Sources */,
 				44B31BA218BA1C2900A99AFE /* RDHReorderingTests.m in Sources */,
+				44A9468518BC043500CB9C32 /* RDHMutableOrderedDictionary+RDHCombinationOperations.m in Sources */,
 				44A9466D18BA815700CB9C32 /* RDHMutableOrderedDictionary+RDHExtendedMutableOrderedDictionary.m in Sources */,
 				44CF0E5918BA47370029EFC2 /* RDHMutableTests.m in Sources */,
 				44A9467318BA837800CB9C32 /* RDHMutableOrderedDictionary+RDHMutableOrderedExtensions.m in Sources */,
 				44E7142118BA040900A99FDF /* RDHInitalizerTests.m in Sources */,
+				44A9468718BC045A00CB9C32 /* RDHOrderedDictionaryCombinationTests.m in Sources */,
 				44A9466B18BA815700CB9C32 /* RDHOrderedDictionary.m in Sources */,
 				44A9465F18BA7D0300CB9C32 /* RDHBasicTests.m in Sources */,
 				44A9466F18BA815700CB9C32 /* RDHMutableOrderedDictionary.m in Sources */,
