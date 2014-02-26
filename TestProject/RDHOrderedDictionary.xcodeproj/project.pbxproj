@@ -56,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44641FF718BE872400E8E5AC /* RDHOrderedDictionary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = RDHOrderedDictionary.podspec; path = ../RDHOrderedDictionary.podspec; sourceTree = "<group>"; };
+		44641FF818BE872400E8E5AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		44A9465B18BA777500CB9C32 /* RDHOrderedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHOrderedTests.m; sourceTree = "<group>"; };
 		44A9465E18BA7D0300CB9C32 /* RDHBasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHBasicTests.m; sourceTree = "<group>"; };
 		44A9466118BA815700CB9C32 /* RDHOrderedDictionary+RDHOrderedExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RDHOrderedDictionary+RDHOrderedExtensions.m"; sourceTree = "<group>"; };
@@ -125,6 +127,8 @@
 		44E713E518B9FAD500A99FDF = {
 			isa = PBXGroup;
 			children = (
+				44641FF718BE872400E8E5AC /* RDHOrderedDictionary.podspec */,
+				44641FF818BE872400E8E5AC /* README.md */,
 				44E713FF18B9FC7700A99FDF /* Classes */,
 				44E713F318B9FAD500A99FDF /* RDHOrderedDictionary */,
 				44E7141F18BA040900A99FDF /* Tests */,
