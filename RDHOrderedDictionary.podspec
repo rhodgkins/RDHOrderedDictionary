@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.ios.platform = '5.1'
   s.osx.platform = '10.7'
   s.source_files = 'RDHOrderedDictionary/**/*.{h,m}'
-  s.public_header_files = 'RDHOrderedDictionary/RDHOrderedDictionary.h'
+  s.public_header_files = 'RDHOrderedDictionary/RDHOrderedDictionary.h', 'RDHOrderedDictionary/NSMutableDictionary+RDHCombinationOperations.h'
 end
