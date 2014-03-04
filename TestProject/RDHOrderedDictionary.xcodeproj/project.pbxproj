@@ -43,18 +43,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		44E713EC18B9FAD500A99FDF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		44641FF718BE872400E8E5AC /* RDHOrderedDictionary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = RDHOrderedDictionary.podspec; path = ../RDHOrderedDictionary.podspec; sourceTree = "<group>"; };
 		44641FF818BE872400E8E5AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -202,7 +190,6 @@
 			buildPhases = (
 				44E713EA18B9FAD500A99FDF /* Sources */,
 				44E713EB18B9FAD500A99FDF /* Frameworks */,
-				44E713EC18B9FAD500A99FDF /* CopyFiles */,
 			);
 			buildRules = (
 			);
