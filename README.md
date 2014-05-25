@@ -1,4 +1,4 @@
-RDHOrderedDictionary [![Build Status](https://travis-ci.org/rhodgkins/RDHOrderedDictionary.svg?branch=master)](https://travis-ci.org/rhodgkins/RDHOrderedDictionary) [![Pod version](https://badge.fury.io/co/RDHOrderedDictionary.svg)](http://badge.fury.io/co/RDHOrderedDictionary)
+RDHOrderedDictionary [![Build Status](https://travis-ci.org/rhodgkins/RDHOrderedDictionary.svg?branch=master)](https://travis-ci.org/rhodgkins/RDHOrderedDictionary) [![Coverage Status](https://img.shields.io/coveralls/rhodgkins/RDHOrderedDictionary.svg)](https://coveralls.io/r/rhodgkins/RDHOrderedDictionary)
 ====================
 
 Ordered version of `NSDictionary` backed by a `NSOrderedSet`.
