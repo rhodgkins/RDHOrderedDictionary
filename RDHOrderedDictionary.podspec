@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.frameworks = 'Foundation'
   s.requires_arc = true
 
-  s.ios.platform = '5.1'
-  s.osx.platform = '10.7'
+  s.ios.deployment_target = '5.1'
+  s.osx.deployment_target = '10.7'
   s.source_files = 'RDHOrderedDictionary/**/*.{h,m}'
   s.public_header_files = 'RDHOrderedDictionary/RDHOrderedDictionary.h', 'RDHOrderedDictionary/NSMutableDictionary+RDHCombinationOperations.h'
 end
