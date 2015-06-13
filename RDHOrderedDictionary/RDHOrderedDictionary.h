@@ -10,54 +10,54 @@
 
 #pragma mark - Immutable Ordered Dictionary
 
-@interface RDHOrderedDictionary : NSDictionary
+@interface RDHOrderedDictionary<KeyType, ObjectType> : NSDictionary<KeyType, ObjectType>
 
 /// @name Creating and Initializing a Dictionary
 
-+(instancetype)dictionaryWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
++(nonnull instancetype)dictionaryWithOrderedDictionary:(nonnull RDHOrderedDictionary<KeyType, ObjectType> *)dictionary;
 
--(instancetype)initWithOrderedDictionary:(RDHOrderedDictionary *)dictionary;
+-(nonnull instancetype)initWithOrderedDictionary:(nonnull RDHOrderedDictionary<KeyType, ObjectType> *)dictionary;
 
 #pragma mark - Comparing Dictionaries
 /// @name Comparing Dictionaries
 
 /// This only compares the contents and not the ordering use `-isEqualToOrderedDictionary:` to check the ordering.
--(BOOL)isEqualToDictionary:(NSDictionary *)otherDictionary;
+-(BOOL)isEqualToDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)otherDictionary;
 
 /// Calls `isEqualToDictionary:` and then checks the ordering of the keys.
--(BOOL)isEqualToOrderedDictionary:(RDHOrderedDictionary *)otherDictionary;
+-(BOOL)isEqualToOrderedDictionary:(nonnull RDHOrderedDictionary<KeyType, ObjectType> *)otherDictionary;
 
 @end
 
 
 #pragma mark - Ordered Extensions
 
-@interface RDHOrderedDictionary (RDHOrderedExtensions)
+@interface RDHOrderedDictionary<KeyType, ObjectType> (RDHOrderedExtensions)
 
 #pragma mark - Accessing Dictionary Members
 /// @name Accessing Dictionary Members
 
 /// @returns the first key in the ordered dictionary.
--(id)firstKey;
+-(nullable KeyType)firstKey;
 
 /// @returns the value for the first key in the ordered dictionary.
--(id)firstValue;
+-(nullable ObjectType)firstValue;
 
 /// @returns the last key in the ordered dictionary.
--(id)lastKey;
+-(nullable KeyType)lastKey;
 
 /// @returns the last for the first key in the ordered dictionary.
--(id)lastValue;
+-(nullable ObjectType)lastValue;
 
 /// @returns the reverse of `-keyEnumerator`.
--(NSEnumerator *)reverseKeyEnumerator;
+-(nonnull NSEnumerator<KeyType> *)reverseKeyEnumerator;
 
 @end
 
 
 #pragma mark - Mutable Ordered Dictionary
 
-@interface RDHMutableOrderedDictionary : RDHOrderedDictionary
+@interface RDHMutableOrderedDictionary<KeyType, ObjectType> : RDHOrderedDictionary<KeyType, ObjectType>
 
 /**
  * This specifies that the order of the keys (and therefore their values) are kept as they are added. That is adding the keys [0, 1, 2] and adding 0 will mean the order of the keys is now [1, 2, 0].
@@ -70,50 +70,50 @@
 #pragma mark - Creating and Initializing a Mutable Dictionary
 /// @name Creating and Initializing a Mutable Dictionary
 
-+(instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
++(nonnull instancetype)dictionaryWithCapacity:(NSUInteger)numItems;
 
--(instancetype)init;
--(instancetype)initWithCapacity:(NSUInteger)numItems;
+-(nonnull instancetype)init;
+-(nonnull instancetype)initWithCapacity:(NSUInteger)numItems;
 
 #pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
--(void)removeObjectForKey:(id)aKey;
+-(void)removeObjectForKey:(nonnull KeyType)aKey;
 
 /**
  * @see reordersWhenInsertingAlreadyPresentKeys
  * @warning anObject must not be `nil`.
  */
--(void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
+-(void)setObject:(nonnull ObjectType)anObject forKey:(nonnull KeyType <NSCopying>)aKey;
 
 @end
 
 
 #pragma mark - Extended Mutable Ordered Dictionary
 
-@interface RDHMutableOrderedDictionary (RDHExtendedMutableOrderedDictionary)
+@interface RDHMutableOrderedDictionary<KeyType, ObjectType> (RDHExtendedMutableOrderedDictionary)
 
 #pragma mark - Adding and removing objects
 /// @name Adding and removing objects
 
 /// Adds (or replaces) the entries from the provided dictionary as they are ordered in that dictionary.
--(void)addEntriesFromDictionary:(NSDictionary *)otherDictionary;
+-(void)addEntriesFromDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)otherDictionary;
 
 -(void)removeAllObjects;
--(void)removeObjectsForKeys:(NSArray *)keyArray;
--(void)removeObjectsForKeySet:(NSSet *)keySet;
--(void)removeObjectsForOrderedKeySet:(NSOrderedSet *)orderedKeySet;
+-(void)removeObjectsForKeys:(nonnull NSArray<KeyType> *)keyArray;
+-(void)removeObjectsForKeySet:(nonnull NSSet<KeyType> *)keySet;
+-(void)removeObjectsForOrderedKeySet:(nonnull NSOrderedSet<KeyType> *)orderedKeySet;
 
 /// Replaces the entire contents of this dictionary with the provided one keeping the order as they were ordered in that dictionary.
--(void)setDictionary:(NSDictionary *)otherDictionary;
--(void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key;
+-(void)setDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)otherDictionary;
+-(void)setObject:(nullable ObjectType)obj forKeyedSubscript:(nonnull KeyType <NSCopying>)key;
 
 @end
 
 
 #pragma mark - Mutable Ordered Extensions
 
-@interface RDHMutableOrderedDictionary (RDHMutableOrderedExtensions)
+@interface RDHMutableOrderedDictionary<KeyType, ObjectType> (RDHMutableOrderedExtensions)
 
 #pragma mark - Adding and removing objects
 /// @name Adding and removing objects
@@ -128,15 +128,15 @@
 /// @name Sorting Entries
 
 /// Sorts the array in place using the provided sort descriptors.
--(void)sortEntriesByKeysUsingDescriptors:(NSArray *)sortDescriptors;
+-(void)sortEntriesByKeysUsingDescriptors:(nonnull NSArray<NSSortDescriptor *> *)sortDescriptors;
 
 #if NS_BLOCKS_AVAILABLE
 
 /// Sorts the array in place using the provided comparator.
--(void)sortEntriesByKeysUsingComparator:(NSComparator)cmptr;
+-(void)sortEntriesByKeysUsingComparator:(nonnull NSComparator)cmptr;
 
 /// Sorts the array in place using the provided comparator and specified options.
--(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+-(void)sortEntriesByKeysWithOptions:(NSSortOptions)opts usingComparator:(nonnull NSComparator)cmptr;
 
 #endif
 
@@ -145,24 +145,24 @@
 
 #pragma mark - Combination Operations
 
-@interface RDHMutableOrderedDictionary (RDHCombinationOperations)
+@interface RDHMutableOrderedDictionary<KeyType, ObjectType> (RDHCombinationOperations)
 
 #pragma mark - Combining and Recombining Dictionaries
 /// @name Combining and Recombining Dictionaries
 
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored.
--(void)intersectIgnoringValuesFromDictionary:(NSDictionary *)dictionary;
+-(void)intersectIgnoringValuesFromDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
--(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary;
+-(void)intersectReplacingValuesFromDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /// Removes the entries from the receiver where their keys are present in the provided dictionary. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
--(void)minusDictionary:(NSDictionary *)dictionary;
+-(void)minusDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /**
  * Adds entries to the receiver from the provided dictionary. This method is the same as `addEntriesFromDictionary:`.
  * @see -addEntriesFromDictionary:
  */
--(void)unionDictionary:(NSDictionary *)dictionary;
+-(void)unionDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "RDHOrderedDictionary_RDHInternal.h"
 
-NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> objects[], NSUInteger cnt)
+__nonnull NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> __nonnull objects[], NSUInteger cnt)
 {
     NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithCapacity:cnt];
     

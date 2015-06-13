@@ -10,24 +10,24 @@
 
 #pragma mark - Combination Operations
 
-@interface NSMutableDictionary (RDHCombinationOperations)
+@interface NSMutableDictionary<KeyType, ObjectType> (RDHCombinationOperations)
 
 #pragma mark - Combining and Recombining Dictionaries
 /// @name Combining and Recombining Dictionaries
 
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are ignored.
--(void)intersectIgnoringValuesFromDictionary:(NSDictionary *)dictionary;
+-(void)intersectIgnoringValuesFromDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /// Keeps only the entries in the receiver where their keys are present in the provided dictionary. The associated values are replaced.
--(void)intersectReplacingValuesFromDictionary:(NSDictionary *)dictionary;
+-(void)intersectReplacingValuesFromDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /// Removes the entries from the receiver where their keys are present in the provided dictionary. This is exactly the same as `[self removeObjectsForKeys:[dictionary allKeys]]`.
--(void)minusDictionary:(NSDictionary *)dictionary;
+-(void)minusDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 /**
  * Adds entries to the receiver from the provided dictionary. This method is the same as `addEntriesFromDictionary:`. 
  * @see -addEntriesFromDictionary:
  */
--(void)unionDictionary:(NSDictionary *)dictionary;
+-(void)unionDictionary:(nonnull NSDictionary<KeyType, ObjectType> *)dictionary;
 
 @end

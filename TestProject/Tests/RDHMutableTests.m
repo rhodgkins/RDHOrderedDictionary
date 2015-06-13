@@ -16,8 +16,6 @@
 
 #import "RDHOrderedDictionary.h"
 
-static NSUInteger const RDHObjectCount = 100000;
-
 @implementation RDHMutableTests
 
 -(void)setUp

@@ -8,17 +8,17 @@
 
 #import "RDHOrderedDictionary.h"
 
-FOUNDATION_EXPORT NSMutableOrderedSet* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> objects[], NSUInteger cnt);
+FOUNDATION_EXPORT __nonnull NSMutableOrderedSet<id<NSCopying>>* NSMutableOrderedSetFromObjectsPreservingOrder(const id<NSCopying> __nonnull objects[], NSUInteger cnt);
 
-@interface RDHOrderedDictionary ()
+@interface RDHOrderedDictionary<KeyType, ObjectType> ()
 {
 @package
-    NSMutableOrderedSet *orderedKeySet;
-    NSMutableDictionary *backingDictionary;
+    NSMutableOrderedSet<KeyType> *__nonnull orderedKeySet;
+    NSMutableDictionary<KeyType, ObjectType> *__nonnull backingDictionary;
 }
 
 @end
 
-@interface RDHMutableOrderedDictionary ()
+@interface RDHMutableOrderedDictionary<KeyType, ObjectType> ()
 
 @end
